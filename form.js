@@ -76,7 +76,7 @@ class Form {
     let mobilegroup = document.createElement("div");
     mobilegroup.className = "mobile-group";
     let mobilelabel = document.createElement("label");
-    mobilelabel.innerText = "Phone Number";
+    mobilelabel.innerText = "Mobile";
     this.mobile = document.createElement("input");
     this.mobile.type = "text";
     this.mobile.defaultValue = "";
