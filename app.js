@@ -38,9 +38,19 @@ btnAdd.addEventListener("click", function () {
 
 //validate Action
 btnValidate.addEventListener("click", function () {
+  let validation = true;
+  forms = forms.filter((form) => !form.removed); //delete removed forms from array
   forms.forEach((form) => {
-    form.validate();
+    if (!form.validate()) {
+      validation = false;
+      return;
+    }
   });
+
+  if (validation) {
+    alert("All inputs are valid!");
+    return;
+  }
 });
 
 //save Action

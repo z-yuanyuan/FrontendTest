@@ -104,13 +104,14 @@ class Form {
 
   //function validate: validate all input elements
   validate() {
-    let nameRegex = /^[a-z][a-z\s]*$/;
+    let nameRegex = /^[a-zA-Z ]+$/;
     let emailRegex =
-      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      /^\s*(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))\s*$/;
     let numbersRegex = /^[0-9]+$/;
     let correct = true;
+
     //check input name: Alphabets and space
-    if (!this.name.value.match(nameRegex)) {
+    if (this.name.validity.typeMismatch || !this.name.value.match(nameRegex)) {
       let p = document.querySelector(`.error-name-${this.id.toString()}`);
       p.innerHTML =
         "Name contains invalid characters (letters and space only!)";
@@ -137,6 +138,7 @@ class Form {
       document.querySelector(`.error-mobile-${this.id.toString()}`).innerHTML =
         "";
     }
+
     return correct;
   }
 }
