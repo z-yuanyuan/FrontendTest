@@ -19,7 +19,7 @@ let btnSave = document.querySelector(".btnSave");
 
 //save contact in text file
 const save = (content) => {
-  let filename = "output.txt";
+  let filename = "contact.txt";
   let contentType = "text/plain";
   const a = document.createElement("a");
   const file = new Blob(content, { type: contentType });

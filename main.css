@@ -8,8 +8,11 @@ body {
   background-color: #dcdcdc;
   border: 2px solid grey;
   padding: 50px;
+}
 
-  
+.form-head {
+  display: flex;
+  justify-content: space-between;
 }
 
 h2 {
@@ -68,7 +71,6 @@ p[class^="error-"] {
   padding-top: 20px;
 }
 
-
 input[type="text"],
 select {
   width: 50%;
@@ -90,8 +92,8 @@ input[type="submit"] {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
+  column-gap: 40px;
 }
-
 
 .btnRemove {
   padding: 5px 23px;
